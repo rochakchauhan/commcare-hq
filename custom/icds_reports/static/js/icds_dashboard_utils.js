@@ -4,14 +4,19 @@ hqDefine("js/icds_dashboard_utils", function () {
     function populateDashboardConstants(appName) {
         var initialPageData = hqImport("hqwebapp/js/initial_page_data");
         angular.module(appName).constant('isAlertActive', window.angular.element('.alert-maintenance').children().length === 1);
+        angular.module(appName).constant('isMobile', initialPageData.get("is_mobile"));
         angular.module(appName).constant('locationHierarchy', initialPageData.get("location_hierarchy"));
         angular.module(appName).constant('userLocationId', initialPageData.get("user_location_id"));
+        angular.module(appName).constant('userLocationType', initialPageData.get("user_location_type"));
         angular.module(appName).constant('allUserLocationId', initialPageData.get("all_user_location_id"));
         angular.module(appName).constant('reportAnIssueUrl', initialPageData.get("report_an_issue_url"));
         angular.module(appName).constant('isWebUser', initialPageData.get("is_web_user"));
         angular.module(appName).constant('haveAccessToFeatures', initialPageData.get("have_access_to_features"));
         angular.module(appName).constant('haveAccessToAllLocations', initialPageData.get("have_access_to_all_locations"));
         angular.module(appName).constant('stateLevelAccess', initialPageData.get("state_level_access"));
+        angular.module(appName).constant('navMetadata', initialPageData.get("nav_metadata"));
+        angular.module(appName).constant('userFullName', initialPageData.get("user_full_name"));
+        angular.module(appName).constant('userUsername', initialPageData.get("user_username"));
         angular.module(appName).constant('genders', [
             {id: '', name: 'All'},
             {id: 'M', name: 'Male'},
